@@ -25,7 +25,7 @@ require('./config/passport')(passport);
 
 // Connecting to MongoDB...
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/student-mgmt-sys', {
+mongoose.connect(process.env.DATABASE_URL), {
     useNewUrlParser: true
 }).then(() => console.log('Connected to MongoDB Server...')).catch(err => console.error('Error occured connecting to MongoDB...', err));
 
